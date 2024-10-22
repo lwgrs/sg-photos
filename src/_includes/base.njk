@@ -3,6 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="{{ title or metadata.title }}" />
+    <meta name="description" content="{{ meta_description or metadata.description }}" />
+    <link rel="canonical" content="{{ canonical_url }}" />
+    <meta name="author" content="Stephen Gower" />
+    <meta name="image" content="{{ meta_image or metadata.image}}" />
+    
+    <meta property="og:site_name" content="{{ metadata.title }}" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="{{ meta_description }}" />
+    <meta name="fediverse:creator" content="@srgower@ottawa.place" />
+
     <link rel="stylesheet" href="/css/styles.css" />
     <title>{{ title }}</title>
   </head>
