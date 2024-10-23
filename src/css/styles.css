@@ -185,3 +185,9 @@
   .notice a:hover {
   background-color: var(--pink);
   }
+  
+  /* Code styling */ 
+  code {
+    background: rgb(46, 46, 51);
+    color: #d5d5d6;
+  }
