@@ -155,3 +155,6 @@
     object-fit: cover; /* Ensures the image fills the container while maintaining its aspect ratio */
     display: block;
   }
+  .img-archive ul {
+    list-style: none;
+  }
