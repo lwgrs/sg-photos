@@ -143,6 +143,7 @@
     text-decoration: none;
   }
 
+  /* Main photo grid */ 
   .img-archive {
     display: flex;         /* Flexbox for side-by-side layout */
     flex-wrap: wrap;       /* Wrap the images if they overflow the container width */
@@ -160,4 +161,27 @@
     width: 200px;          /* Fixed width for square images */
     height: 200px;         /* Fixed height for square images */
     overflow: hidden;      /* Hide any part of the image outside the square */
+  }
+
+  /* Notice boxes */
+.notice {
+  background: var(--accent-bg);
+  border: 3px solid var(--text);
+  padding: 0 1rem 1rem 1rem;
+  margin: 1.5rem 0 1.5rem 0;
+  }
+  
+  
+  .notice::before {
+  border: 3px solid var(--text);
+  display: block;
+  text-align: center;
+  position: relative;
+  top: -1.25rem;
+  padding: 2px 10px;
+  font-weight: bold;
+  }
+  
+  .notice a:hover {
+  background-color: var(--pink);
   }
