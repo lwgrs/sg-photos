@@ -3,5 +3,15 @@ title: Stephen Gower's Photo Blog
 layout: base.njk 
 ---
 
+<p>Welcome to my photo blog. Click on any image below to start exploring.</p>
 
-<p>This page is going to host my photos that I take and wish to share with everyone.</p>
+
+<div class="img-archive">
+
+    {% for post in collections.blog | reverse %}
+  
+    <a href="{{ post.url }}"><img src="{{ post.data.meta_image }}" title="{{ post.data.title }}" /></a>
+    
+  {% endfor %}
+  
+  </div>
