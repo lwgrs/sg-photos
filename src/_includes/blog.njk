@@ -2,5 +2,20 @@
 layout: base.njk
 ---
 
-<time> <em> {{ date }} </em> </time>
+{% if prevPost.url %}
+		<p class="ctr">
+			<strong>Previous</strong>:
+			<a class="previous" href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>
+		</p>
+	{% endif %}
+	{% if nextPost.url %}
+		<p class="ctr">
+			<strong>Next</strong>:
+			<a class="next" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+		</p>
+	{% endif %}
+<h2>{{ title }}</h2>
+<time> <em> {{ date | readableDate}} </em> </time>
 <article>{{ content | safe}}</article>
+<a href=".."><strong>Return to grid</strong></a>
+
