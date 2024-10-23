@@ -143,7 +143,15 @@
     text-decoration: none;
   }
 
-  .archive img {
+  .img-archive {
+    width: 200px;  /* Set this to the square size you want */
+    height: 200px; /* Set this to the square size you want */
+    overflow: hidden; /* Hide the overflowed part of the image */
+    position: relative;
+  }
+  .img-archive img {
+    width: 100%;  /* Make the image fill the container's width */
+    height: 100%; /* Make the image fill the container's height */
+    object-fit: cover; /* Ensures the image fills the container while maintaining its aspect ratio */
     display: block;
-    padding: 0;
   }
