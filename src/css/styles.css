@@ -148,6 +148,9 @@
     height: 200px; /* Set this to the square size you want */
     overflow: hidden; /* Hide the overflowed part of the image */
     position: relative;
+    display: inline-block; /* Allows containers to be side-by-side */
+    margin-right: 10px; /* Add some space between images */
+    vertical-align: top; /* Align containers to the top */
   }
   .img-archive img {
     width: 100%;  /* Make the image fill the container's width */
@@ -155,6 +158,4 @@
     object-fit: cover; /* Ensures the image fills the container while maintaining its aspect ratio */
     display: block;
   }
-  .img-archive ul {
-    list-style: none;
-  }
+ 
