@@ -158,4 +158,9 @@
     object-fit: cover; /* Ensures the image fills the container while maintaining its aspect ratio */
     display: block;
   }
- 
+  .img-archive a {
+    width: 200px;  /* Set a fixed size for each image link */
+    height: 200px; /* Match the square size */
+    overflow: hidden;
+    display: block; /* Ensure the link behaves like a block element */
+  }
