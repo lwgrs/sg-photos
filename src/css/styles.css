@@ -144,23 +144,20 @@
   }
 
   .img-archive {
-    width: 200px;  /* Set this to the square size you want */
-    height: 200px; /* Set this to the square size you want */
-    overflow: hidden; /* Hide the overflowed part of the image */
-    position: relative;
-    display: inline-block; /* Allows containers to be side-by-side */
-    margin-right: 10px; /* Add some space between images */
-    vertical-align: top; /* Align containers to the top */
-  }
+    display: flex;         /* Flexbox for side-by-side layout */
+    flex-wrap: wrap;       /* Wrap the images if they overflow the container width */
+    gap: 10px;             /* Add spacing between images */
+   }
+
   .img-archive img {
-    width: 100%;  /* Make the image fill the container's width */
-    height: 100%; /* Make the image fill the container's height */
-    object-fit: cover; /* Ensures the image fills the container while maintaining its aspect ratio */
-    display: block;
+    width: 100%;           /* Make the image fill the container */
+    height: 100%;          /* Maintain aspect ratio but cover the container */
+    object-fit: cover;     /* Ensures the image covers the container without distortion */
+    display: block;        /* Ensure the image behaves like a block element */
   }
   .img-archive a {
-    width: 200px;  /* Set a fixed size for each image link */
-    height: 200px; /* Match the square size */
-    overflow: hidden;
-    display: block; /* Ensure the link behaves like a block element */
+    display: inline-block; /* Ensure the links are treated like inline-block elements */
+    width: 200px;          /* Fixed width for square images */
+    height: 200px;         /* Fixed height for square images */
+    overflow: hidden;      /* Hide any part of the image outside the square */
   }
