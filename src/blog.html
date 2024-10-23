@@ -4,10 +4,9 @@ layout: base.njk
 ---
 
 These are all of my amazing blog posts, enjoy!
-<ul>
-  {% for post in collections.blog | reverse %}
-  <li>
-    <a href="{{post.url}}"><img src="{{post.data.meta_image}}" width="50%" height="50%" title="{{ post.title }}" /></a>
-  </li>
-  {% endfor %}
-</ul>
+
+{% for post in collections.blog | reverse %}
+
+  <a href="{{post.url}}"><img src="{{post.data.meta_image}}" width="50%" height="50%" title="{{ post.title }}" /></a>
+  
+{% endfor %}
