@@ -133,6 +133,11 @@
     }
   }
   
+  /* Lazy loading for mobile */
+  img {
+    loading="lazy"; !important 
+  }
+  
   /* Format links */
   a,
   a:visited {
