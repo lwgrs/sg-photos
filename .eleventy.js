@@ -1,4 +1,5 @@
 const { DateTime } = require("luxon");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 
 module.exports = function (eleventyConfig) {
@@ -18,6 +19,13 @@ module.exports = function (eleventyConfig) {
 eleventyConfig.addFilter('htmlDateString', (dateObj) => {
   return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
 });
+
+eleventyConfig.addPlugin(pluginRss, {
+  posthtmlRenderOptions: {
+    closingSingleTag: "default" // opt-out of <img/>-style XHTML single tags 
+  }
+});
+
 
     eleventyConfig.addCollection("blog", function(collection) {
 	    const coll = collection.getFilteredByTag("blog");
