@@ -20,6 +20,11 @@ eleventyConfig.addFilter('htmlDateString', (dateObj) => {
   return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
 });
 
+eleventyConfig.addFilter("getFullYear", (dateString) => {
+  dateObj = new Date(dateString);
+  return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy');
+});
+
 eleventyConfig.addPlugin(pluginRss, {
   posthtmlRenderOptions: {
     closingSingleTag: "default" // opt-out of <img/>-style XHTML single tags 
