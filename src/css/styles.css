@@ -168,7 +168,7 @@
     overflow: hidden;      /* Hide any part of the image outside the square */
   }
 
-  /* Notice boxes */
+  /* Notice boxes & Changelog styles */
 .notice {
   background: var(--accent-bg);
   border: 3px solid var(--text);
@@ -189,6 +189,10 @@
   
   .notice a:hover {
   background-color: var(--pink);
+  }
+
+  details > summary {
+    font-weight: bold;
   }
   
   /* Code styling */ 
