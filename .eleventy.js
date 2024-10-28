@@ -20,7 +20,10 @@ eleventyConfig.addFilter('htmlDateString', (dateObj) => {
   return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
 });
 
-eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+eleventyConfig.addFilter("justYear", (dateString) => {
+  dateObj = new Date(dateString);
+  return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy');
+});
 
 eleventyConfig.addPlugin(pluginRss, {
   posthtmlRenderOptions: {
