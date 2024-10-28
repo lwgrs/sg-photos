@@ -14,8 +14,8 @@ layout: base.njk
 			<a class="next" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
 		</p>
 	{% endif %}
+<a href="/"><strong>Return to grid</strong></a>
 <h2>{{ title }}</h2>
 <time> <em> {{ date | readableDate}} </em> </time>
 <article>{{ content | safe}}</article>
-<a href="/"><strong>Return to grid</strong></a>
 
