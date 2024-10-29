@@ -50,7 +50,7 @@
   
   body > header {
     text-align: center;
-    padding: 0 0.5rem 2rem 0.5rem;
+    /* padding: 0 0.5rem 2rem 0.5rem; */
     box-sizing: border-box;
   }
   
@@ -69,7 +69,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
   }
   
   nav a {
@@ -83,7 +83,7 @@
   }
   
   nav a:last-child {
-    margin-right: 0;
+    margin-right: 0 !important;
   }
   
   /* Reduce nav side on mobile */
@@ -131,12 +131,26 @@
     h2 {
       font-size: 2.1rem;
     }
+    img {
+      width: 100%;
+      max-width: 100vw;
+    }
+
   }
+
+  /* Display images as grid on mobile devices */
+  @media only screen and (max-width: 720px) {
+  .img-index a {
+    flex: 1 1 calc(50% - 10px); /* 50% width for two images per row, accounting for gap */
+  }
+}
+  /* Set a three-column layout on larger screens */
+@media (min-width: 721px) {
+  .img-index a {
+    flex: 1 1 calc(33.33% - 10px); /* Adjust to three images per row, accounting for gap */
+  }
+}
   
-  /* Lazy loading for mobile */
-  img {
-    loading="lazy"; !important 
-  }
   
   /* Format links */
   a,
@@ -149,24 +163,26 @@
   }
 
   /* Main photo grid */ 
-  .img-archive {
+  .img-index {
     display: flex;         /* Flexbox for side-by-side layout */
     flex-wrap: wrap;       /* Wrap the images if they overflow the container width */
     gap: 10px;             /* Add spacing between images */
    }
 
-  .img-archive img {
+  .img-index img {
     width: 100%;           /* Make the image fill the container */
     height: 100%;          /* Maintain aspect ratio but cover the container */
     object-fit: cover;     /* Ensures the image covers the container without distortion */
     display: block;        /* Ensure the image behaves like a block element */
   }
-  .img-archive a {
+  .img-index a {
     display: inline-block; /* Ensure the links are treated like inline-block elements */
-    width: 200px;          /* Fixed width for square images */
+    width: 200x;          /* Fixed width for square images */
     height: 200px;         /* Fixed height for square images */
     overflow: hidden;      /* Hide any part of the image outside the square */
   }
+
+
 
   /* Notice boxes & Changelog styles */
 .notice {
@@ -206,3 +222,27 @@
     width: 1em;
     height: 1em;
   }
+
+  /* Styling for archive page */ 
+
+  .archive ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .archive li {
+    display: flex;
+    align-items: center;
+    padding: 0.3rem;
+    text-align: top;
+    border-bottom: 1px dotted var(--border);
+   }
+
+  .archive img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    display: inline-block;
+  }
+
+ 

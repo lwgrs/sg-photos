@@ -8,9 +8,9 @@ layout: base.njk
     <p style="font-size: smallest; font-style: italic;">📌Things I would like to change or add to the blog</p>
     <div class="notice">
     <ul>
-        <li>Reduce image width/height on posts</li>
+        <li><s>Reduce image width/height on posts</s> <em>No longer necessary, this was to improve mobile appearance</em></li>
         <li>Add post categories</li>
-        <li>Improve mobile view</li>
+        <li><s>Improve mobile view</s></li>
         <li>Far future: make image grid "prettier"</li>
         <li><s>Far future: make changelog sections collapsible</s></li>
     </ul>
@@ -18,7 +18,15 @@ layout: base.njk
     
     <p><strong>Most recent updates</strong></p>
     <div class="notice">
-        <details open>    
+        <details open>
+          <summary>29 Oct 2024</summary>
+          <ul>
+            <li>Optimized mobile appearance - images now appear in 2x2 grid</li>
+            <li>Added an "archive" page, limit index to showing 9 images</li>
+            <ul><li>Link to archive will only show if there are &gt;9 images</li></ul>
+          </ul>
+        </details>
+        <details>    
             <summary>25 Oct 2024 <em>v1.0</em></summary>
             <ul>
              <li>Added RSS Feed & subscribe link</li>
