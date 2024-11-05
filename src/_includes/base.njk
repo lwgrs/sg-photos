@@ -3,16 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="{{ title or metadata.title }} | Photos by Stephen Gower" />
-    <meta name="description" content="{{ meta_description or metadata.description }}" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="title" content="{{ title }} | Photos by Stephen Gower" />
+    <meta name="description" content="{{ meta_description }}" />
     <link rel="canonical" content="{{ canonical_url }}" />
     <meta name="author" content="Stephen Gower" />
-    <meta name="image" content="{{ meta_image or metadata.image}}" />
+    <meta name="image" content="{{ meta_image }}" />
     
-    <meta property="og:site_name" content="{{ metadata.title }}" />
+    <meta property="og:site_name" content="Photos by Stephen Gower" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:type" content="article" />
     <meta property="og:description" content="{{ meta_description }}" />
+    <meta property="og:image" content="{{ meta_image }}" />
+
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="{{ title }}" />
+    <meta property="twitter:description" content="{{ meta_description }}" />
+
     <meta name="fediverse:creator" content="@srgower@ottawa.place" />
 
     <link rel="stylesheet" href="/css/styles.css" />
