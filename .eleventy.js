@@ -32,19 +32,31 @@ eleventyConfig.addPlugin(pluginRss, {
 });
 
 
-    eleventyConfig.addCollection("blog", function(collection) {
-	    const coll = collection.getFilteredByTag("blog");
- 
-	    for(let i = 0; i < coll.length ; i++) {
+eleventyConfig.addCollection("blog", function(collection) {
+	const coll = collection.getFilteredByTag("blog");
+	  for(let i = 0; i < coll.length ; i++) {
 		    const prevPost = coll[i-1];
 		    const nextPost = coll[i + 1];
 
-		  coll[i].data["prevPost"] = prevPost;
-		  coll[i].data["nextPost"] = nextPost;
+		coll[i].data["prevPost"] = prevPost;
+		coll[i].data["nextPost"] = nextPost;
 	}
 
 	return coll;
 });
+
+// Create tag list
+eleventyConfig.addCollection('tagsList', (collectionApi) => {
+  const tagsSet = new Set()
+  collectionApi.getAll().forEach((item) => {
+    if (!item.data.tags) return
+    item.data.tags
+      .filter((tag) => !['blog'].includes(tag))
+      .forEach((tag) => tagsSet.add(tag))
+  })
+  return [...tagsSet].sort((b, a) => b.localeCompare(a))
+})
+
     return {
         markdownTemplateEngine: "njk",
         htmlTemplateEngine: "njk",

@@ -1,0 +1,12 @@
+---
+title: Tags 
+layout: base 
+permalink: /tags/
+---
+
+<p><a href="/archive/">Return to Archive</a> &#8226; <a href="..">Return Home</a></p>
+<h3>All tags</h3>
+
+{% for tag in collections.tagsList %}
+  <span class="tag-cloud"><a href="/tags/{{tag}}">#{{tag}}</a></span>
+{% endfor %}
