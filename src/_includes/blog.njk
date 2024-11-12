@@ -19,7 +19,7 @@ layout: base.njk
 <time> <em> {{ date | readableDate}} </em> </time>
 <p>
 {% for tag in tags -%}
-  {% if tag !== 'post' %}
+  {% if tag !== 'blog' %}
  <span class="tag">#{{ tag }}</span> 
   {% endif %}
 {%- endfor %}

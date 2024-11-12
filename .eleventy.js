@@ -32,8 +32,8 @@ eleventyConfig.addPlugin(pluginRss, {
 });
 
 
-    eleventyConfig.addCollection("post", function(collection) {
-	    const coll = collection.getFilteredByTag("post");
+    eleventyConfig.addCollection("blog", function(collection) {
+	    const coll = collection.getFilteredByTag("blog");
  
 	    for(let i = 0; i < coll.length ; i++) {
 		    const prevPost = coll[i-1];
