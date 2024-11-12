@@ -7,12 +7,12 @@ meta_image: https://photos.srgower.com/img/sgp-logo.jpg
 <p>Welcome to my photo blog. Click on any image below to start exploring.</p>
 
 
-{% if collections.blog.length > 9 %}
+{% if collections.post.length > 9 %}
 <p style="width: 100%;text-align: right;padding-right: 20px;"><a href="/archive/">view all photos</a></p>
 {% endif %} 
 
 <div class="img-index">
-  {% for post in collections.blog | reverse %}
+  {% for post in collections.post | reverse %}
   {% if loop.index0 < 9 %}
   <a href="{{ post.url }}"><img src="{{ post.data.meta_image }}" title="{{ post.data.title }}" /></a>
   {% endif %}

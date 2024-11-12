@@ -1,5 +1,4 @@
 {
     "layout": "blog",
-    "tags": "blog",
     "permalink": "/{{ date | justYear }}/{{ title | slugify }}/"
   }

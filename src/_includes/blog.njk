@@ -17,6 +17,13 @@ layout: base.njk
 <a href="/"><strong>Return to grid</strong></a>
 <h2>{{ title }}</h2>
 <time> <em> {{ date | readableDate}} </em> </time>
+<p>
+{% for tag in tags -%}
+  {% if tag !== 'post' %}
+ <span class="tag">#{{ tag }}</span> 
+  {% endif %}
+{%- endfor %}
+</p>
 <article>{{ content | safe}}</article>
 <h6 style="width: 100%;text-align: center;"><a href="https://www.addtoany.com/share#url=https://photos.srgower.com{{ page.url }}&title={{ title }}" target="_blank">Share</a></h6>
 

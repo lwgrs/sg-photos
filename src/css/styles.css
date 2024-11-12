@@ -259,3 +259,10 @@ h6 a {
   text-decoration: none;
   color: var(--accent);
 }
+
+/* Format tags */
+.tag {
+  color: var(--accent);
+  user-select: none;
+  font-size: 0.75em;
+}
