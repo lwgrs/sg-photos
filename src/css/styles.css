@@ -271,7 +271,23 @@
 /* Format tags on blog posts */
 .tag {
   font-size: 1em;
+  padding: 0px 5px;
+  font-family: sans-serif;
+  border-radius: 5px;
+  background-color: var(--border);
+  margin-top: 6px;
 }
+
+.tag a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+time {
+  display:inline-block;
+}
+
+
 
 /* Tag cloud */ 
 .tag-cloud {
