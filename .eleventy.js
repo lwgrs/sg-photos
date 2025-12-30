@@ -33,7 +33,9 @@ eleventyConfig.addPlugin(pluginRss, {
 
 
 eleventyConfig.addCollection("blog", function(collection) {
-	const coll = collection.getFilteredByTag("blog");
+	const coll = collection.getFilteredByTag("blog")
+  // enable post scheduling
+  .filter(post => post.date <= new Date());
 	  for(let i = 0; i < coll.length ; i++) {
 		    const prevPost = coll[i-1];
 		    const nextPost = coll[i + 1];
