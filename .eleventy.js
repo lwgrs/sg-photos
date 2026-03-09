@@ -34,8 +34,12 @@ eleventyConfig.addPlugin(pluginRss, {
 
 eleventyConfig.addCollection("blog", function(collection) {
 	const coll = collection.getFilteredByTag("blog")
-  // enable post scheduling
-  .filter(post => post.date <= new Date());
+ // enable post scheduling - compare UTC dates only (no time component)
+  .filter(post => {
+    const now = new Date();
+    const todayUTC = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+    return post.date.getTime() <= todayUTC;
+  });
 	  for(let i = 0; i < coll.length ; i++) {
 		    const prevPost = coll[i-1];
 		    const nextPost = coll[i + 1];
