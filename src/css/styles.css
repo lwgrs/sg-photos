@@ -268,39 +268,43 @@
   vertical-align: middle;
 }
 
-/* Format tags on blog posts */
-.tag {
-  font-size: 1em;
-  padding: 0px 5px;
-  font-family: sans-serif;
-  border-radius: 5px;
-  background-color: var(--border);
-  margin-top: 6px;
-}
-
-.tag a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-time {
-  display:inline-block;
-}
-
-
-
-/* Tag cloud */ 
+/* Shared base for both tag types */
+.tag,
 .tag-cloud {
-  display: inline-block;
-  padding: 0px 5px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875em;
   font-family: sans-serif;
+  padding: 2px 8px;
   border-radius: 5px;
   background-color: var(--border);
-  margin-top: 6px;
+  margin: 4px 4px 0 0;  /* top + right gap so rows breathe */
+  white-space: nowrap;
 }
+
+.tag a,
 .tag-cloud a {
   color: var(--accent);
   text-decoration: none;
+}
+
+/* If tags are in a container, let it handle wrapping */
+.tag-list,
+.tag-cloud-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;        /* uniform spacing in all directions */
+  margin-top: 6px;
+}
+
+/* If using flex gap on the container, remove margin from children */
+.tag-list .tag,
+.tag-cloud-container .tag-cloud {
+  margin: 0;
+}
+
+time {
+  display: inline-block;
 }
 
 /* Tighten H2 tag for blog titles */
